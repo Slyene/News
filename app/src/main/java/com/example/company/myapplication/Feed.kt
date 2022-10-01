@@ -11,16 +11,10 @@ class FeedItemAPI (
     val title: String,
     val pubDate: String,
     val link: String,
-    val author: String,
+    val thumbnail: String,
     val description: String,
-    val enclosure: EnclosureItemAPI,
+    val guid: String,
 )
-
-open class EnclosureItemAPI (
-    var link: String = "", // ссылка на картинку
-    var type: String = "",
-    var length: Int = 0,
-) : RealmObject()
 
 open class Feed (
     var items: RealmList<FeedItem> = RealmList<FeedItem>()
@@ -30,13 +24,7 @@ open class FeedItem(
     var title: String = "",
     var pubDate: String = "",
     var link: String = "",
-    var author: String = "",
+    var thumbnail: String = "",
     var description: String = "",
-    var enclosure: EnclosureItemAPI? = EnclosureItemAPI(),
-) : RealmObject()
-
-open class EnclosureItem (
-    var link: String = "",
-    var type: String = "",
-    var length: Int = 0,
+    var guid: String = "",
 ) : RealmObject()

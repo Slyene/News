@@ -6,7 +6,7 @@ import java.net.URL
 
 fun createRequest(url: String): Observable<String> = Observable.create {
     val urlCon = URL(url).openConnection() as HttpURLConnection
-    urlCon.connectTimeout = 1000
+    urlCon.connectTimeout = 5000
     try {
         urlCon.connect()
 
